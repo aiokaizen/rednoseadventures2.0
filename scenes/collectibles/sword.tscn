@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://bx7vphv4ya4yi"]
 
-[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_2ew8f"]
+[ext_resource type="Script" path="res://scripts/sword.gd" id="1_rhgwy"]
 [ext_resource type="Texture2D" uid="uid://cn5ihldcvb0eb" path="res://assets/Captain Clown Nose/Captain Clown Nose/Sword/21-Sword Idle/Sword Idle 01.png" id="1_t8ve7"]
 [ext_resource type="Texture2D" uid="uid://e8de2e7v2526" path="res://assets/Captain Clown Nose/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 01.png" id="1_v2537"]
 [ext_resource type="Texture2D" uid="uid://crrea0f024lnx" path="res://assets/Captain Clown Nose/Captain Clown Nose/Sword/23-Sword Embedded/Sword Embedded 02.png" id="2_d4w7l"]
@@ -29,9 +29,6 @@ size = Vector2(13.5, 12)
 [sub_resource type="SpriteFrames" id="SpriteFrames_2thwg"]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": ExtResource("1_t8ve7")
-}, {
 "duration": 1.0,
 "texture": null
 }],
@@ -104,7 +101,8 @@ animations = [{
 }]
 
 [node name="Sword" type="Area2D"]
-script = ExtResource("1_2ew8f")
+collision_mask = 2
+script = ExtResource("1_rhgwy")
 
 [node name="Box" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, 0)
@@ -123,7 +121,7 @@ debug_color = Color(0.952426, 0.160877, 0.381662, 0.42)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_2thwg")
-animation = &"collect"
+animation = &"idle"
 autoplay = "idle"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

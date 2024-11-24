@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
 @onready var player_box: CollisionShape2D = $PlayerBox
-@onready var player_sprite: AnimatedSprite2D = $PlayerSprite
+@onready var sprite_without_sword: AnimatedSprite2D = $WithoutSword
+@onready var sprite_with_sword: AnimatedSprite2D = $WithSword
+@onready var player_sprite = sprite_without_sword
 
 const SPEED = 200.0
 const JUMP_VELOCITY = -350.0
@@ -12,6 +14,7 @@ var jump_count = 0
 var airborn = false
 var jumping = false
 var falling = false
+var has_sword = false
 
 
 func die():
@@ -21,6 +24,15 @@ func die():
 
 func _physics_process(delta: float) -> void:
 	var x_velocity = 0
+	
+	if has_sword:
+		sprite_without_sword.hide()
+		player_sprite = sprite_with_sword
+		player_sprite.visible = true
+	else:
+		sprite_with_sword.hide()
+		player_sprite = sprite_without_sword
+		player_sprite.visible = true
 	
 	# Handle death scenario
 	if is_dead:

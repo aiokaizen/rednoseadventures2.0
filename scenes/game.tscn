@@ -420,4 +420,4 @@ shape = SubResource("WorldBoundaryShape2D_u6xai")
 disabled = true
 
 [node name="Sword" parent="." instance=ExtResource("13_qiwln")]
-position = Vector2(84, 117)
+position = Vector2(74, 119)
