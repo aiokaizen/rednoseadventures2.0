@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://8r085gki6pax"]
+
+[ext_resource type="PackedScene" uid="uid://b1ymmgqps47kv" path="res://scenes/death_zone.tscn" id="1_k34na"]
+[ext_resource type="Texture2D" uid="uid://bualruw53lgf2" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 01.png" id="2_jpckt"]
+[ext_resource type="Texture2D" uid="uid://dddnexyqcvw4q" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 02.png" id="3_8iov8"]
+[ext_resource type="Texture2D" uid="uid://bnm51oum0ydg0" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 03.png" id="4_kbwww"]
+[ext_resource type="Texture2D" uid="uid://d4kfkkhv1j70p" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 04.png" id="5_dpa84"]
+[ext_resource type="Texture2D" uid="uid://djec7vcdujt6f" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 05.png" id="6_nam8j"]
+[ext_resource type="Texture2D" uid="uid://pgb4n5rdv6v5" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 06.png" id="7_cgpwy"]
+[ext_resource type="Texture2D" uid="uid://r1nfxhoh7t7f" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 07.png" id="8_k2ona"]
+[ext_resource type="Texture2D" uid="uid://c11oxmocf01wv" path="res://assets/The Crusty Crew/Fierce Tooth/01-Idle/Idle 08.png" id="9_hmx6k"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_41uv8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jpckt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8iov8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_kbwww")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_dpa84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_nam8j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_cgpwy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k2ona")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_hmx6k")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="FierceTooth" instance=ExtResource("1_k34na")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -13)
+sprite_frames = SubResource("SpriteFrames_41uv8")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.014759
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(0, -12)
+polygon = PackedVector2Array(-6, -6, -4, -8, 5, -8, 7, -6, 7, 8, -6, 8)

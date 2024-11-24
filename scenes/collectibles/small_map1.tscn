@@ -1,0 +1,103 @@
+[gd_scene load_steps=18 format=3 uid="uid://b1rmy36fjgcej"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_lrxb1"]
+[ext_resource type="Texture2D" uid="uid://3h18slur6hgr" path="res://assets/Pirate Treasure/Map Effect/In/01.png" id="2_ew5wh"]
+[ext_resource type="Texture2D" uid="uid://cxqar018efkoo" path="res://assets/Pirate Treasure/Map Effect/In/02.png" id="3_x8jyu"]
+[ext_resource type="Texture2D" uid="uid://bmrwgrwvoru73" path="res://assets/Pirate Treasure/Map Effect/In/03.png" id="4_2wbev"]
+[ext_resource type="Texture2D" uid="uid://danx7s5ftlwik" path="res://assets/Pirate Treasure/Map Effect/Out/01.png" id="5_4wn01"]
+[ext_resource type="Texture2D" uid="uid://f55qn252ayrv" path="res://assets/Pirate Treasure/Map Effect/Out/02.png" id="6_hajwc"]
+[ext_resource type="Texture2D" uid="uid://cgiju6orshgep" path="res://assets/Pirate Treasure/Map Effect/Out/03.png" id="7_3rlri"]
+[ext_resource type="Texture2D" uid="uid://btv7wasn78f2g" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/01.png" id="8_g7i8i"]
+[ext_resource type="Texture2D" uid="uid://djewviy8kvys5" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/02.png" id="9_8ju1j"]
+[ext_resource type="Texture2D" uid="uid://be6ygje6x5che" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/03.png" id="10_gvgej"]
+[ext_resource type="Texture2D" uid="uid://dyld64q5gakap" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/04.png" id="11_5hd0q"]
+[ext_resource type="Texture2D" uid="uid://ps3vlt7hd8my" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/05.png" id="12_t5xvl"]
+[ext_resource type="Texture2D" uid="uid://dtlbh1jl7xux2" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/06.png" id="13_jgq7n"]
+[ext_resource type="Texture2D" uid="uid://dga7nndyu8bq6" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/07.png" id="14_7pk8p"]
+[ext_resource type="Texture2D" uid="uid://m4mrae4gchew" path="res://assets/Pirate Treasure/Small Maps/Small Map 1/08.png" id="15_kybxd"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ew5wh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x8jyu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_2wbev")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_4wn01")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_hajwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_3rlri")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_g7i8i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8ju1j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_gvgej")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_5hd0q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_t5xvl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_jgq7n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_7pk8p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_kybxd")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1e11"]
+size = Vector2(15, 15)
+
+[node name="GoldenSkull" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_lrxb1")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujpxh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.00869907
+
+[node name="Box" type="CollisionShape2D" parent="."]
+position = Vector2(-0.5, 0.5)
+shape = SubResource("RectangleShape2D_j1e11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

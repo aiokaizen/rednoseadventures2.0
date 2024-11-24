@@ -1,0 +1,67 @@
+[gd_scene load_steps=11 format=3 uid="uid://b6fxd3ehieca"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_diryf"]
+[ext_resource type="Texture2D" uid="uid://mr5x2hasmdae" path="res://assets/Pirate Treasure/Coin Effect/01.png" id="2_orqbd"]
+[ext_resource type="Texture2D" uid="uid://be25amac28amu" path="res://assets/Pirate Treasure/Coin Effect/02.png" id="3_3dmk6"]
+[ext_resource type="Texture2D" uid="uid://bh3pmifnsg41q" path="res://assets/Pirate Treasure/Coin Effect/03.png" id="4_lont1"]
+[ext_resource type="Texture2D" uid="uid://82cufdi0b5q7" path="res://assets/Pirate Treasure/Gold Coin/01.png" id="6_nlca1"]
+[ext_resource type="Texture2D" uid="uid://bj6wivdpdb6en" path="res://assets/Pirate Treasure/Gold Coin/02.png" id="7_4bane"]
+[ext_resource type="Texture2D" uid="uid://cnpyvxk7qnqho" path="res://assets/Pirate Treasure/Gold Coin/03.png" id="8_tw0yy"]
+[ext_resource type="Texture2D" uid="uid://lk5twtoc31bg" path="res://assets/Pirate Treasure/Gold Coin/04.png" id="9_d82ak"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_orqbd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_3dmk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_lont1")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_nlca1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_4bane")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_tw0yy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_d82ak")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_bkp6d"]
+radius = 6.0
+
+[node name="GoldCoin" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_diryf")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(-1, -6)
+sprite_frames = SubResource("SpriteFrames_ujpxh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, -6)
+shape = SubResource("CircleShape2D_bkp6d")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

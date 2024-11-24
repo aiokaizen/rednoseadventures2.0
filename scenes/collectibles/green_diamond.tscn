@@ -1,0 +1,70 @@
+[gd_scene load_steps=12 format=3 uid="uid://06uynt0y8b3f"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_6o5kr"]
+[ext_resource type="Texture2D" uid="uid://c64i2erma4ne1" path="res://assets/Pirate Treasure/Green Diamond/01.png" id="2_q5w3p"]
+[ext_resource type="Texture2D" uid="uid://c1uthokov5e2k" path="res://assets/Pirate Treasure/Diamond Effect/01.png" id="2_vaxtj"]
+[ext_resource type="Texture2D" uid="uid://dux0hpmtmdb6m" path="res://assets/Pirate Treasure/Green Diamond/02.png" id="3_paap2"]
+[ext_resource type="Texture2D" uid="uid://3yvf1mb14k53" path="res://assets/Pirate Treasure/Diamond Effect/02.png" id="3_yhyjy"]
+[ext_resource type="Texture2D" uid="uid://cnff726eyqv1p" path="res://assets/Pirate Treasure/Green Diamond/03.png" id="4_gv7wp"]
+[ext_resource type="Texture2D" uid="uid://bj0bllnq4jfh8" path="res://assets/Pirate Treasure/Diamond Effect/03.png" id="4_iwhui"]
+[ext_resource type="Texture2D" uid="uid://dbetubkdoiivf" path="res://assets/Pirate Treasure/Green Diamond/04.png" id="5_cvmjk"]
+[ext_resource type="Texture2D" uid="uid://7hrtvlsk6kgp" path="res://assets/Pirate Treasure/Diamond Effect/04.png" id="5_vkue6"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6w0ip"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_vaxtj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_yhyjy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_iwhui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_vkue6")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_q5w3p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_paap2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gv7wp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_cvmjk")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rutex"]
+radius = 5.0
+height = 12.0
+
+[node name="GreenDiamond" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_6o5kr")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_6w0ip")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Box" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_rutex")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6d4uq4g424wg"]
+
+[ext_resource type="Texture2D" uid="uid://2dtmiwjeh8o8" path="res://assets/Palm Tree Island/Background/Additional Water.png" id="1_vicha"]
+[ext_resource type="Texture2D" uid="uid://1a6o0dkkachs" path="res://assets/Palm Tree Island/Background/Additional Sky.png" id="2_2bgre"]
+[ext_resource type="Texture2D" uid="uid://vs3q1pw4ruqu" path="res://assets/Palm Tree Island/Background/BG Image.png" id="3_jn1s3"]
+
+[node name="Background" type="Node2D"]
+
+[node name="AdditionalWater" type="Sprite2D" parent="."]
+position = Vector2(0.500023, 80.5)
+scale = Vector2(20.2188, 4.40625)
+texture = ExtResource("1_vicha")
+
+[node name="AdditionalSky" type="Sprite2D" parent="."]
+position = Vector2(0.5, -75)
+scale = Vector2(20.2187, 5.3125)
+texture = ExtResource("2_2bgre")
+
+[node name="BgImage" type="Sprite2D" parent="."]
+position = Vector2(0.500011, -13)
+scale = Vector2(1.6849, 1)
+texture = ExtResource("3_jn1s3")

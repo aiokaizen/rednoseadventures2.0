@@ -1,0 +1,73 @@
+[gd_scene load_steps=12 format=3 uid="uid://d14yo8jnpa2av"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_aph06"]
+[ext_resource type="Texture2D" uid="uid://c1uthokov5e2k" path="res://assets/Pirate Treasure/Diamond Effect/01.png" id="2_iwc4a"]
+[ext_resource type="Texture2D" uid="uid://3yvf1mb14k53" path="res://assets/Pirate Treasure/Diamond Effect/02.png" id="3_4cbk6"]
+[ext_resource type="Texture2D" uid="uid://bj0bllnq4jfh8" path="res://assets/Pirate Treasure/Diamond Effect/03.png" id="4_se2a5"]
+[ext_resource type="Texture2D" uid="uid://7hrtvlsk6kgp" path="res://assets/Pirate Treasure/Diamond Effect/04.png" id="5_j5ud3"]
+[ext_resource type="Texture2D" uid="uid://5202v7twh704" path="res://assets/Pirate Treasure/Red Diamond/01.png" id="6_lq2ye"]
+[ext_resource type="Texture2D" uid="uid://8oj731f5iccq" path="res://assets/Pirate Treasure/Red Diamond/02.png" id="7_fvktc"]
+[ext_resource type="Texture2D" uid="uid://vyk1a7rcairj" path="res://assets/Pirate Treasure/Red Diamond/03.png" id="8_6oyti"]
+[ext_resource type="Texture2D" uid="uid://s0cuslgweks5" path="res://assets/Pirate Treasure/Red Diamond/04.png" id="9_mq2n2"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_iwc4a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_4cbk6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_se2a5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j5ud3")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_lq2ye")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fvktc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_6oyti")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_mq2n2")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a2xd3"]
+size = Vector2(10.6066, 10.6066)
+
+[node name="RedDiamond" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_aph06")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujpxh")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.535618
+
+[node name="Box" type="CollisionShape2D" parent="."]
+position = Vector2(2.98023e-08, -0.5)
+rotation = 0.785398
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_a2xd3")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

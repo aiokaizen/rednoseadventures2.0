@@ -1,0 +1,63 @@
+[gd_scene load_steps=12 format=3 uid="uid://cyv1j6k06ncan"]
+
+[ext_resource type="Texture2D" uid="uid://cg4nqpt0s2xui" path="res://assets/Pirate Ship/Decorations/Door/Closing/01.png" id="1_eo0n0"]
+[ext_resource type="Texture2D" uid="uid://df3oao31egnnk" path="res://assets/Pirate Ship/Decorations/Door/Closing/02.png" id="2_8km14"]
+[ext_resource type="Texture2D" uid="uid://dwns7yf6rc10h" path="res://assets/Pirate Ship/Decorations/Door/Closing/03.png" id="3_x2bhj"]
+[ext_resource type="Texture2D" uid="uid://g431j52ovr73" path="res://assets/Pirate Ship/Decorations/Door/Closing/04.png" id="4_1hxkj"]
+[ext_resource type="Texture2D" uid="uid://c8o2ycck5vjlg" path="res://assets/Pirate Ship/Decorations/Door/Closing/05.png" id="5_f4pab"]
+[ext_resource type="Texture2D" uid="uid://dfy5i10u7e3dp" path="res://assets/Pirate Ship/Decorations/Door/Opening/01.png" id="6_7odoi"]
+[ext_resource type="Texture2D" uid="uid://cq8uucqoe1j7n" path="res://assets/Pirate Ship/Decorations/Door/Opening/02.png" id="7_hrsun"]
+[ext_resource type="Texture2D" uid="uid://b7hy5dmjresf8" path="res://assets/Pirate Ship/Decorations/Door/Opening/03.png" id="8_jak8w"]
+[ext_resource type="Texture2D" uid="uid://dphwhdyldkx54" path="res://assets/Pirate Ship/Decorations/Door/Opening/04.png" id="9_ld3bv"]
+[ext_resource type="Texture2D" uid="uid://v788pd24llc8" path="res://assets/Pirate Ship/Decorations/Door/Opening/05.png" id="10_pqvpi"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_lx7mt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_eo0n0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8km14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_x2bhj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1hxkj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_f4pab")
+}],
+"loop": true,
+"name": &"closing",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_7odoi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_hrsun")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_jak8w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_ld3bv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_pqvpi")
+}],
+"loop": true,
+"name": &"opening",
+"speed": 10.0
+}]
+
+[node name="Door" type="Node2D"]
+
+[node name="DoorSprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -33)
+sprite_frames = SubResource("SpriteFrames_lx7mt")
+animation = &"opening"
+frame_progress = 0.0219675

@@ -1,0 +1,160 @@
+[gd_scene load_steps=30 format=3 uid="uid://diaksxey63kp6"]
+
+[ext_resource type="Script" path="res://scripts/collectible.gd" id="1_4royl"]
+[ext_resource type="Texture2D" uid="uid://3h18slur6hgr" path="res://assets/Pirate Treasure/Map Effect/In/01.png" id="2_obnwk"]
+[ext_resource type="Texture2D" uid="uid://cxqar018efkoo" path="res://assets/Pirate Treasure/Map Effect/In/02.png" id="3_w6ce2"]
+[ext_resource type="Texture2D" uid="uid://bmrwgrwvoru73" path="res://assets/Pirate Treasure/Map Effect/In/03.png" id="4_rtywi"]
+[ext_resource type="Texture2D" uid="uid://danx7s5ftlwik" path="res://assets/Pirate Treasure/Map Effect/Out/01.png" id="5_181e4"]
+[ext_resource type="Texture2D" uid="uid://f55qn252ayrv" path="res://assets/Pirate Treasure/Map Effect/Out/02.png" id="6_oonph"]
+[ext_resource type="Texture2D" uid="uid://cgiju6orshgep" path="res://assets/Pirate Treasure/Map Effect/Out/03.png" id="7_1r31d"]
+[ext_resource type="Texture2D" uid="uid://drk86pollsp7q" path="res://assets/Pirate Treasure/Big Map/Idle/01.png" id="7_acopg"]
+[ext_resource type="Texture2D" uid="uid://dygryubqs1dsn" path="res://assets/Pirate Treasure/Big Map/Folding/01.png" id="7_f02dh"]
+[ext_resource type="Texture2D" uid="uid://cs5q3257oyey4" path="res://assets/Pirate Treasure/Big Map/Folding/02.png" id="8_iwbwp"]
+[ext_resource type="Texture2D" uid="uid://b53eoygd2rdc6" path="res://assets/Pirate Treasure/Big Map/Idle/02.png" id="8_y6t0s"]
+[ext_resource type="Texture2D" uid="uid://bo8tgwnc8ce5f" path="res://assets/Pirate Treasure/Big Map/Folding/03.png" id="9_8fv1i"]
+[ext_resource type="Texture2D" uid="uid://btu61irrhk3t8" path="res://assets/Pirate Treasure/Big Map/Idle/03.png" id="9_a8ktx"]
+[ext_resource type="Texture2D" uid="uid://cxa8uaww4qmcn" path="res://assets/Pirate Treasure/Big Map/Folding/04.png" id="10_egjm4"]
+[ext_resource type="Texture2D" uid="uid://bf7dryvxhb4lh" path="res://assets/Pirate Treasure/Big Map/Idle/04.png" id="10_rjbnw"]
+[ext_resource type="Texture2D" uid="uid://bd4i76j7ud1nn" path="res://assets/Pirate Treasure/Big Map/Idle/05.png" id="11_ylnme"]
+[ext_resource type="Texture2D" uid="uid://bhcybd7akb5i4" path="res://assets/Pirate Treasure/Big Map/Idle/06.png" id="12_vb4dw"]
+[ext_resource type="Texture2D" uid="uid://dph055tuqia4e" path="res://assets/Pirate Treasure/Big Map/Idle/07.png" id="13_qrjpm"]
+[ext_resource type="Texture2D" uid="uid://dong6220amaqf" path="res://assets/Pirate Treasure/Big Map/Idle/08.png" id="14_bnw51"]
+[ext_resource type="Texture2D" uid="uid://d2xsgn5qqmupl" path="res://assets/Pirate Treasure/Big Map/Idle/09.png" id="15_47gyk"]
+[ext_resource type="Texture2D" uid="uid://dr5f7sa6eck5" path="res://assets/Pirate Treasure/Big Map/Idle/10.png" id="16_5w73v"]
+[ext_resource type="Texture2D" uid="uid://drhbdpfw8n5tj" path="res://assets/Pirate Treasure/Big Map/Idle/11.png" id="17_6moyi"]
+[ext_resource type="Texture2D" uid="uid://d4p5fsxbj2ae" path="res://assets/Pirate Treasure/Big Map/Unfolding/01.png" id="22_8p4e5"]
+[ext_resource type="Texture2D" uid="uid://boe7g5y5q40q6" path="res://assets/Pirate Treasure/Big Map/Unfolding/02.png" id="23_1fny2"]
+[ext_resource type="Texture2D" uid="uid://drxcanmk01nuh" path="res://assets/Pirate Treasure/Big Map/Unfolding/03.png" id="24_am464"]
+[ext_resource type="Texture2D" uid="uid://ksncqvhdxbvf" path="res://assets/Pirate Treasure/Big Map/Unfolding/04.png" id="25_7n3a8"]
+[ext_resource type="Texture2D" uid="uid://cxsdweym1u0wd" path="res://assets/Pirate Treasure/Big Map/Unfolding/05.png" id="26_wthko"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujpxh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_obnwk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w6ce2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rtywi")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_181e4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_oonph")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_1r31d")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"collect",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f02dh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_iwbwp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_8fv1i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_egjm4")
+}],
+"loop": false,
+"name": &"fold",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_acopg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y6t0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_a8ktx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_rjbnw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ylnme")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_vb4dw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_qrjpm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_bnw51")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_47gyk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_5w73v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_6moyi")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("22_8p4e5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_1fny2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_am464")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_7n3a8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_wthko")
+}],
+"loop": false,
+"name": &"unfold",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_j1e11"]
+size = Vector2(30, 30)
+
+[node name="BigMap" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_4royl")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ujpxh")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="Box" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("RectangleShape2D_j1e11")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="Sprite" to="." method="_on_sprite_animation_finished"]

@@ -1,0 +1,56 @@
+[gd_scene load_steps=11 format=3 uid="uid://dndtajtg3y4p"]
+
+[ext_resource type="PackedScene" uid="uid://b1ymmgqps47kv" path="res://scenes/death_zone.tscn" id="1_4p1al"]
+[ext_resource type="Texture2D" uid="uid://c7h4njukbo7g5" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 01.png" id="2_7r4u0"]
+[ext_resource type="Texture2D" uid="uid://dntwyw3kmcpir" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 02.png" id="3_ce5hl"]
+[ext_resource type="Texture2D" uid="uid://i5fscxmmbxkv" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 03.png" id="4_uijn2"]
+[ext_resource type="Texture2D" uid="uid://cfw5rlftxmaiy" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 04.png" id="5_8mro0"]
+[ext_resource type="Texture2D" uid="uid://uayei8fm0skv" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 05.png" id="6_5o111"]
+[ext_resource type="Texture2D" uid="uid://x7f801iewhyi" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 06.png" id="7_xqy1e"]
+[ext_resource type="Texture2D" uid="uid://578w5ypr7nag" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 07.png" id="8_y0dsl"]
+[ext_resource type="Texture2D" uid="uid://blaycusw32vbo" path="res://assets/The Crusty Crew/Pink Star/01-Idle/Idle 08.png" id="9_6uxxp"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ysovr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_7r4u0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_ce5hl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_uijn2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8mro0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5o111")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_xqy1e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_y0dsl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_6uxxp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[node name="FierceTooth" instance=ExtResource("1_4p1al")]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." index="1"]
+position = Vector2(0, -14)
+sprite_frames = SubResource("SpriteFrames_ysovr")
+animation = &"idle"
+frame = 1
+frame_progress = 0.436212
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="2"]
+position = Vector2(1, -13)
+polygon = PackedVector2Array(-9, 1, -6, -1, -1, -6, 4, -1, 8, 0, 6, 8, -6, 8)
