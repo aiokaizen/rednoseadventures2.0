@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckysl6uaa5g80"]
+
+[ext_resource type="PackedScene" uid="uid://ckhairqr34mai" path="res://scenes/ui/base_bar.tscn" id="1_0tnq0"]
+[ext_resource type="Texture2D" uid="uid://jncvv1lirdnc" path="res://assets/Wood and Paper UI/custom/Life bar.png" id="2_hawle"]
+
+[node name="LifeBar" instance=ExtResource("1_0tnq0")]
+
+[node name="TextureProgressBar" parent="." index="0"]
+texture_under = ExtResource("2_hawle")
+texture_progress_offset = Vector2(17, 14)

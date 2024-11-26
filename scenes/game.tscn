@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=4 uid="uid://jwdl387yqwkd"]
+[gd_scene load_steps=20 format=4 uid="uid://jwdl387yqwkd"]
 
 [ext_resource type="PackedScene" uid="uid://ltsw5jqobesp" path="res://scenes/red_nose.tscn" id="1_uqh3k"]
 [ext_resource type="PackedScene" uid="uid://b6d4uq4g424wg" path="res://scenes/background.tscn" id="2_1ekqp"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://8r085gki6pax" path="res://scenes/fierce_tooth.tscn" id="11_c548s"]
 [ext_resource type="PackedScene" uid="uid://b1ymmgqps47kv" path="res://scenes/death_zone.tscn" id="11_j5sw1"]
 [ext_resource type="PackedScene" uid="uid://bx7vphv4ya4yi" path="res://scenes/collectibles/sword.tscn" id="13_qiwln"]
+[ext_resource type="PackedScene" uid="uid://cv14eu32fb8c" path="res://scenes/ui/interface.tscn" id="14_v228n"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8bm57"]
 texture = ExtResource("6_0wnqx")
@@ -320,6 +321,12 @@ size = Vector2(4821, 51)
 
 [node name="Game" type="Node2D"]
 metadata/_edit_horizontal_guides_ = [68.0, 290.0]
+
+[node name="Interface" parent="." instance=ExtResource("14_v228n")]
+offset_left = -204.0
+offset_top = 1.0
+offset_right = 252.0
+offset_bottom = 258.0
 
 [node name="RedNose" parent="." instance=ExtResource("1_uqh3k")]
 z_index = 10

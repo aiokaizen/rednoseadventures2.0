@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://esk5xomywvpj"]
+
+[ext_resource type="Texture2D" uid="uid://dkjp1gqpkgltc" path="res://assets/Wood and Paper UI/custom/Label.png" id="1_lx0du"]
+[ext_resource type="Texture2D" uid="uid://82cufdi0b5q7" path="res://assets/Pirate Treasure/Gold Coin/01.png" id="2_2mvjj"]
+[ext_resource type="Theme" uid="uid://4ekrfy24arct" path="res://scenes/ui/default_theme.tres" id="3_i6hd8"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e5niw"]
+font_size = 10
+
+[node name="Counter" type="NinePatchRect"]
+custom_minimum_size = Vector2(43, 18)
+offset_right = 43.0
+offset_bottom = 18.0
+texture = ExtResource("1_lx0du")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Icon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -8.0
+offset_right = 16.0
+offset_bottom = 8.0
+grow_vertical = 2
+texture = ExtResource("2_2mvjj")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -31.0
+offset_top = -6.0
+offset_bottom = 8.0
+grow_horizontal = 0
+grow_vertical = 2
+theme = ExtResource("3_i6hd8")
+text = "99"
+label_settings = SubResource("LabelSettings_e5niw")
+horizontal_alignment = 1
+vertical_alignment = 1

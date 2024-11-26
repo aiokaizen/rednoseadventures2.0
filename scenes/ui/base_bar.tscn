@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://ckhairqr34mai"]
+
+[ext_resource type="Texture2D" uid="uid://45l2hre5wpqc" path="res://assets/Wood and Paper UI/custom/Bar.png" id="1_gm171"]
+[ext_resource type="Texture2D" uid="uid://dq2gxn2xx622c" path="res://assets/Wood and Paper UI/Life Bars/Colors/1.png" id="2_a40qu"]
+
+[node name="BaseBar" type="HBoxContainer"]
+offset_right = 96.0
+offset_bottom = 10.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 2
+value = 100.0
+rounded = true
+texture_under = ExtResource("1_gm171")
+texture_progress = ExtResource("2_a40qu")
+texture_progress_offset = Vector2(4, 3)

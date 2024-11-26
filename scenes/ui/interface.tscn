@@ -1,0 +1,46 @@
+[gd_scene load_steps=5 format=3 uid="uid://cv14eu32fb8c"]
+
+[ext_resource type="PackedScene" uid="uid://bm6y77tcnjrk6" path="res://scenes/ui/counter_gold_coin.tscn" id="1_qg633"]
+[ext_resource type="PackedScene" uid="uid://ot3n23a54f1d" path="res://scenes/ui/counter_silver_coin.tscn" id="2_2cklo"]
+[ext_resource type="PackedScene" uid="uid://ckysl6uaa5g80" path="res://scenes/ui/life_bar.tscn" id="3_lcs13"]
+[ext_resource type="PackedScene" uid="uid://3xihpuu83ggt" path="res://scenes/ui/power_bar.tscn" id="4_p5leo"]
+
+[node name="Interface" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+offset_left = 24.0
+offset_top = 24.0
+offset_right = 120.0
+offset_bottom = 92.0
+
+[node name="LifeBar" parent="VBoxContainer" instance=ExtResource("3_lcs13")]
+layout_mode = 2
+
+[node name="PowerBar" parent="VBoxContainer" instance=ExtResource("4_p5leo")]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -114.0
+offset_top = 24.0
+offset_right = -24.0
+offset_bottom = 42.0
+grow_horizontal = 0
+
+[node name="CounterGoldCoin" parent="HBoxContainer" instance=ExtResource("1_qg633")]
+layout_mode = 2
+
+[node name="CounterSilverCoin" parent="HBoxContainer" instance=ExtResource("2_2cklo")]
+layout_mode = 2
