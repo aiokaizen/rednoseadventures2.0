@@ -383,9 +383,8 @@ autoplay = "idle"
 [node name="WithSword" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, -12)
 sprite_frames = SubResource("SpriteFrames_7togn")
-animation = &"attack_02"
+animation = &"idle"
 autoplay = "idle"
-frame = 2
 
 [node name="PlayerBox" type="CollisionShape2D" parent="."]
 position = Vector2(0, -13)
