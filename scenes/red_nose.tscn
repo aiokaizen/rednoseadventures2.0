@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://ltsw5jqobesp"]
+[gd_scene load_steps=69 format=3 uid="uid://ltsw5jqobesp"]
 
 [ext_resource type="Script" path="res://scripts/red_nose.gd" id="1_j3ouf"]
 [ext_resource type="Texture2D" uid="uid://dldgg20tjt4ly" path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 01.png" id="3_gjrfu"]
@@ -62,6 +62,8 @@
 [ext_resource type="Texture2D" uid="uid://dmhbqru0xseg6" path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/Throw Sword 01.png" id="45_yx8ra"]
 [ext_resource type="Texture2D" uid="uid://db4vghquv40na" path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/Throw Sword 02.png" id="46_esohr"]
 [ext_resource type="Texture2D" uid="uid://v2rlcua1v3n4" path="res://assets/Captain Clown Nose/Captain Clown Nose/Captain Clown Nose with Sword/20-Throw Sword/Throw Sword 03.png" id="47_3l4u0"]
+[ext_resource type="AudioStream" uid="uid://chyxlnv2n5vvh" path="res://assets/audio/effects/jump.wav" id="63_udnt1"]
+[ext_resource type="AudioStream" uid="uid://dun8sypunbyi" path="res://assets/audio/effects/hit.wav" id="64_1x81a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_rjebq"]
 animations = [{
@@ -373,6 +375,11 @@ size = Vector2(15, 7)
 collision_layer = 2
 script = ExtResource("1_j3ouf")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
+position_smoothing_enabled = true
+position_smoothing_speed = 10.0
+
 [node name="WithoutSword" type="AnimatedSprite2D" parent="."]
 visible = false
 position = Vector2(0, -12)
@@ -419,5 +426,15 @@ disabled = true
 visible = false
 polygon = PackedVector2Array(13, -12, 23, -12, 25, -9, 25, -3, 20, 3, 14, 6, 8, 8, 1, 8, -6, 5, 3, 4, 9, 0, 13, -7)
 disabled = true
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Jump" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("63_udnt1")
+bus = &"VFX"
+
+[node name="hit" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("64_1x81a")
+bus = &"VFX"
 
 [connection signal="animation_finished" from="WithSword" to="." method="_on_with_sword_animation_finished"]

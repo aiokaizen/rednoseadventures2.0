@@ -21,6 +21,7 @@ var jumping = false
 var falling = false
 var has_sword = false
 var is_attacking = false
+@onready var jump_sound: AudioStreamPlayer2D = $Audio/Jump
 
 
 func die():
@@ -86,6 +87,7 @@ func _physics_process(delta: float) -> void:
 			jumping = true
 			airborn = true
 			player_sprite.play("jump")
+			jump_sound.play()
 	
 		# Handle wall jump.
 		elif is_on_wall() and direction != 0:
@@ -96,6 +98,7 @@ func _physics_process(delta: float) -> void:
 			airborn = true
 			falling = false
 			player_sprite.play("jump")
+			jump_sound.play()
 		elif jump_count < 2:
 			# Handle double jump
 			velocity.y = JUMP_VELOCITY
@@ -103,6 +106,7 @@ func _physics_process(delta: float) -> void:
 			jumping = true
 			falling = false
 			player_sprite.play("jump")
+			jump_sound.play()
 	
 	if falling and not is_attacking:
 		player_sprite.play("fall")
